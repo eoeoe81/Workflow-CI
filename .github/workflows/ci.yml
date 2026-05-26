@@ -1,0 +1,15 @@
+name: CI Workflow
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install mlflow pandas scikit-learn
+      - name: Run MLProject
+        run: mlflow run MLProject/ --env-manager=local
