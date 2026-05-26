@@ -1,0 +1,1 @@
+print("Workflow CI/CD berjalan sukses!")
